@@ -24,8 +24,15 @@ class IssuesStore {
   error = null
 
   constructor() {
-    if (!window || !window.localStorage || !window.localStorage.getItem) return
-    // hydrate observables from local storage
+    // Only hdyrate from localStorage on the client side
+    if (
+      // @ts-ignore
+      !global.window ||
+      !window.localStorage ||
+      !window.localStorage.getItem
+    ) {
+      return
+    }
     const data = getInLocal(this.storageKey)
 
     // @ts-ignore key is guarded for

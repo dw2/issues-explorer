@@ -17,6 +17,8 @@ Using [Github’s API](https://developer.github.com/), build an application with
 
 [issues-explorer-challenge.netlify.com](https://issues-explorer-challenge.netlify.com/)
 
+![issues-explorer-demo](https://user-images.githubusercontent.com/746347/67442535-0b109580-f5b6-11e9-9587-c6c01a43aaf7.gif)
+
 ### Running locally
   1. Create a `.env` file in the root directory and [add your Github personal access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line)
   1. Add `GATSBY_GITHUB_TOKEN=YOUR_TOKEN_HERE` to `.env`

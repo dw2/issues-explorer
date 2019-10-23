@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "baseUrl": "../",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "lib": ["dom", "es2015"],
+    "module": "es6",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "paths": {
+      "components/*": ["src/components/*"],
+      "layouts/*": ["src/layouts/*"],
+      "lib/*": ["src/lib/*"]
+    },
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "types": ["jest", "react", "react-dom", "webpack-env"],
+    "typeRoots": ["../node_modules/@types"]
+  },
+  "include": [
+    "../src/*.ts",
+    "../node_modules/@types",
+    "../node_modules/**/*.d.ts"
+  ],
+  "exclude": ["../node_modules"]
+}

@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import { rem } from 'styled-tidy'
 import theme from './theme'
 
 const { colors, fonts } = theme
@@ -36,10 +35,6 @@ export default createGlobalStyle`
   }
   a, a *, button, button *, label {
     cursor: pointer;
-  }
-  h1 {
-    font-family: ${fonts.accent};
-    font-size: ${rem(40)};
   }
   ::selection {
     background: ${lavender};

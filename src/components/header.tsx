@@ -4,28 +4,28 @@ import { rem, flex, minWidth } from 'styled-tidy'
 import theme from '../lib/styles/theme'
 import Atom from './icons/atom'
 
-const { lavender } = theme.colors
+const { colors, fonts } = theme
+const { lavender } = colors
 
 const Title = styled.h1`
-  ${flex('column-reverse', 'center', 'center')}
+  ${flex('row', 'center', 'center')}
   color: ${lavender};
+  font-size: 10vw;
   line-height: 1;
-  padding: ${rem(32)};
+  padding: ${rem(32)} ${rem(16)} ${rem(16)};
   position: relative;
   text-align: center;
   user-select: none;
   z-index: 4;
 
   svg {
-    margin: ${rem(8)} 0 0;
+    margin: 0 ${rem(8)} 0 0;
   }
 
   ${minWidth(400)`
-    flex-direction: row;
-
-    svg {
-      margin: 0 ${rem(8)} 0 0;
-    }
+    font-size: ${rem(40)};
+    font-family: ${fonts.accent};
+    padding: ${rem(32)};
   `}
 `
 

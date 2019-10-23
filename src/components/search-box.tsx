@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { inject, observer } from 'mobx-react'
 import debounce from 'lodash.debounce'
 import styled from 'styled-components'
-import { rem, flex, position } from 'styled-tidy'
+import { rem, flex, position, minWidth } from 'styled-tidy'
 import theme from '../lib/styles/theme'
 import IssuesStore from '../stores/issues-store'
 import Spinner, { SpinnerWrapper } from './icons/spinner'
@@ -25,12 +25,16 @@ const Form = styled.form`
 
 const Label = styled.label`
   font-family: ${fonts.accent};
-  font-size: ${rem(14)};
+  font-size: 4.2vw;
   letter-spacing: ${rem(1)};
-  padding: ${rem(16)};
+  padding: ${rem(16)} 0;
   text-align: center;
   text-transform: uppercase;
   user-select: none;
+
+  ${minWidth(300)`
+    font-size: ${rem(14)};
+  `}
 `
 
 const Input = styled.input`

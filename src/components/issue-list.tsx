@@ -59,6 +59,12 @@ const Issue = styled.li`
   h3 {
     ${flex('row', 'flex-start', 'space-between')}
 
+    span {
+      flex-grow: 1;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+    }
+
     time {
       font-size: ${rem(12)};
       text-align: right;
@@ -68,11 +74,10 @@ const Issue = styled.li`
   }
 
   p {
-    ${grid(6, 4)}
-    grid-template-columns: repeat(auto, 1fr);
     margin-top: ${rem(8)};
     opacity: 0.9;
     transition: opacity 250ms ease;
+    width: 100%;
   }
 
   a {
@@ -106,9 +111,11 @@ const Issue = styled.li`
 const Tag = styled.mark<{ hex: string }>`
   background: #${value('hex')};
   color: ${black};
+  display: inline-block;
   border-radius: ${rem(4)};
   font-size: ${rem(12)};
   line-height: ${rem(20)};
+  margin: ${rem(4)} ${rem(4)} 0 0;
   padding: 0 ${rem(4)};
   white-space: nowrap;
 `
@@ -146,7 +153,7 @@ const IssueList = ({ issues: issuesStore, inputRef, listRef }: Props) => {
         <Issue key={url}>
           <ExternalLink href={url} onKeyUp={handleKeyUp}>
             <h3>
-              {title}
+              <span>{title}</span>
               <TimeAgo date={createdAt} />
             </h3>
             {labels.length > 0 && (

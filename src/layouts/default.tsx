@@ -8,10 +8,17 @@ import Header from '../components/header'
 
 const { midBlue, darkBlue } = theme.colors
 
+const Wrapper = styled.div`
+  ${position('fixed', 0)}
+  background: linear-gradient(${midBlue}, ${darkBlue});
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+`
+
 const Main = styled.main`
   ${flex('column', 'center', 'flex-start')}
-  background: ${midBlue};
   padding: 0 ${rem(16)} ${rem(64)};
+  width: 100%;
 
   :before {
     ${position('fixed', 0, 0, 'auto')}
@@ -41,8 +48,10 @@ const Layout = ({ children }: Props) => {
       <>
         <Head />
         <GlobalStyle />
-        <Header />
-        <Main>{children}</Main>
+        <Wrapper>
+          <Header />
+          <Main>{children}</Main>
+        </Wrapper>
       </>
     </ThemeProvider>
   )

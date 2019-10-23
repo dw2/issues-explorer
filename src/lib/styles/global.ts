@@ -1,15 +1,20 @@
 import { createGlobalStyle } from 'styled-components'
+import { rem } from 'styled-tidy'
 import theme from './theme'
 
 const { colors, fonts } = theme
-const { white, black } = colors
+const { white, darkBlue, lavender } = colors
 
 export default createGlobalStyle`
   * {
+    background: transparent;
     border: 0;
     border-radius: 0;
     box-sizing: border-box;
     font-family: ${fonts.base};
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
     margin: 0;
     outline: none;
     padding: 0;
@@ -19,16 +24,25 @@ export default createGlobalStyle`
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
   }
+  html,
   body {
-    background: ${white};
-    color: ${black};
+    min-height: 100%;
+  }
+  body {
+    background: ${darkBlue};
+    color: ${white};
     font-weight: 400;
     margin: 0;
   }
-  a, a *, button, button * {
+  a, a *, button, button *, label {
     cursor: pointer;
   }
-  h1, h2, h3 {
+  h1 {
     font-family: ${fonts.accent};
+    font-size: ${rem(40)};
+  }
+  ::selection {
+    background: ${lavender};
+    color: ${white};
   }
 `

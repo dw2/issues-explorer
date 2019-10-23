@@ -53,7 +53,7 @@ export default ({ title, description }: Props) => {
       ]}
     >
       <link
-        href="https://fonts.googleapis.com/css?family=Karla:400,400i,700|Heebo:900|Fira+Mono&display=swap"
+        href="https://fonts.googleapis.com/css?family=Rubik|Quicksand&display=swap"
         rel="stylesheet"
       />
     </Helmet>

@@ -2,6 +2,7 @@ module.exports = {
   collectCoverageFrom: [
     '<rootDir>/src/**',
     '!<rootDir>/src/lib/(styles|mocks)/**',
+    '!<rootDir>/src/config/**',
   ],
   coverageThreshold: {
     global: {

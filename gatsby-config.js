@@ -1,3 +1,5 @@
+require('dotenv').config({ path: '.env' })
+
 module.exports = {
   siteMetadata: {
     title: 'Github Issues Explorer',
@@ -8,6 +10,14 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-styled-components',
+    {
+      resolve: 'gatsby-plugin-typescript',
+      options: {
+        isTSX: true,
+        allExtensions: true,
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -17,19 +27,8 @@ module.exports = {
         background_color: '#FFFFFF',
         theme_color: '#000000',
         display: 'standalone',
-        // icon: 'src/images/gatsby-icon.png',
+        icon: 'src/images/favicon.png',
       },
     },
-    'gatsby-plugin-styled-components',
-    {
-      resolve: 'gatsby-plugin-typescript',
-      options: {
-        isTSX: true,
-        allExtensions: true,
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // 'gatsby-plugin-offline',
   ],
 }

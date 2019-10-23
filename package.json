@@ -5,17 +5,19 @@
   "version": "0.1.0",
   "author": "Doug Waltman <doug@dougwaltman.com>",
   "dependencies": {
+    "axios": "^0.19.0",
     "babel-plugin-styled-components": "^1.10.6",
+    "dotenv": "^8.2.0",
     "gatsby": "^2.16.1",
     "gatsby-image": "^2.2.29",
     "gatsby-plugin-manifest": "^2.2.23",
-    "gatsby-plugin-offline": "^3.0.16",
     "gatsby-plugin-react-helmet": "^3.1.13",
     "gatsby-plugin-sharp": "^2.2.31",
     "gatsby-plugin-styled-components": "^3.1.11",
     "gatsby-plugin-typescript": "^2.1.15",
     "gatsby-source-filesystem": "^2.1.33",
     "gatsby-transformer-sharp": "^2.2.23",
+    "javascript-time-ago": "^2.0.3",
     "lodash.debounce": "^4.0.8",
     "mobx": "^5.14.2",
     "mobx-react": "^6.1.4",
@@ -23,7 +25,7 @@
     "react-dom": "^16.10.2",
     "react-helmet": "^5.2.1",
     "styled-components": "^4.4.0",
-    "styled-tidy": "^1.7.0"
+    "styled-tidy": "^1.7.3"
   },
   "devDependencies": {
     "@testing-library/react": "^9.3.0",
@@ -62,10 +64,10 @@
     "build": "gatsby build",
     "dev": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
+    "lint": "tslint -c config/tslint.json -p config/tsconfig.json && eslint --print-config config/.eslintrc.js | eslint-config-prettier-check",
+    "start": "npm run dev",
     "serve": "gatsby serve",
-    "test": "jest -c config/jest.js --coverage",
-    "lint": "tslint -c config/tslint.json -p config/tsconfig.json && eslint --print-config config/.eslintrc.js | eslint-config-prettier-check"
+    "test": "jest -c config/jest.js --coverage"
   },
   "repository": {
     "type": "git",

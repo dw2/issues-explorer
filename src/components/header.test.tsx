@@ -6,6 +6,6 @@ describe('The Header component', () => {
   it('renders the expected content', async () => {
     const { getByText } = render(<Header />)
 
-    expect(getByText('Site Header')).not.toBeNull()
+    expect(getByText('Issues Explorer')).not.toBeNull()
   })
 })
